@@ -4,7 +4,7 @@ figma.ui.onmessage = msg => {
         var currentIndex = msg.startIndex;
         figma
             .currentPage
-            .findAll(node => node.type === "TEXT" && node.characters === "{pageLabel}")
+            .findAll(node => node.type === "TEXT" && node.characters === "{pageNumber}")
             .forEach(function (node) {
             if (node.type === "TEXT") {
                 var newText = msg.suffix + currentIndex + msg.postfix;
