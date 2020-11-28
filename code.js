@@ -1,6 +1,4 @@
 figma.showUI(__html__, { visible: true, width: 400, height: 450 });
-// limitations
-// single font
 figma.ui.onmessage = msg => {
     if (msg.type === 'add-pages') {
         var currentIndex = msg.startIndex;
