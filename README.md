@@ -7,7 +7,7 @@ Pager is a small Figma plugin to set page numbers to multiple frames.
 3. Complete the configuration below and hit Run
 
 #### Limitation
-- `{pageNumber}` text layer can only have single font
+- `{pageNumber}` text layer can only have a single font
 
 License
 -------

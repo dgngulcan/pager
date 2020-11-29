@@ -6,10 +6,10 @@ figma.ui.onmessage = msg => {
 
     figma
       .currentPage
-      .findAll(node => node.type === "TEXT" && node.characters === "{pageNumber}")
+      .findAll(node => node.type === "TEXT" && node.characters === "{p#}")
       .forEach(function (node) {
         if (node.type === "TEXT") {
-          var newText = msg.suffix + currentIndex + msg.postfix
+          var newText = msg.prefix + currentIndex + msg.suffix
 
           figma.loadFontAsync(node.fontName)
             .then(function () {
