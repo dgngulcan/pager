@@ -1,0 +1,7 @@
+<body style="margin: 24px; font-family: sans-serif"><h4>Instructions</h4><p>1. Create text layer <span class="label">{p#}</span> frame(s) that you want to add page numbers to.<br>2. Make sure the text layer is where you want the page number to be.<br>3. Complete the configuration below and hit Run.</p><br><table><tr><td>Start number</td><td><input id="start_index" value="1" type="number"></td></tr><tr><td>Prefix</td><td><input id="prefix" value="" placeholder="Optional"></td></tr><tr><td>Suffix</td><td><input id="suffix" value="" placeholder="Optional"></td></tr></table><br><br><button id="add_pages">Run</button><br><br><br><p class="footnote">Bugs or feature requests? Contact us on <a href="https://github.com/dgngulcan/pager" target="_blank">our GitHub page</a>. &#128522</p><script src="ui.js"></script></body><script>document.getElementById('add_pages').onclick = () => {
+    const edtStartIndex = document.getElementById('start_index');
+    const startIndex = parseInt(edtStartIndex.value, 10);
+    const prefix = document.getElementById('prefix').value;
+    const suffix = document.getElementById('suffix').value;
+    parent.postMessage({ pluginMessage: { type: 'add-pages', startIndex, prefix, suffix } }, '*')
+  }</script>

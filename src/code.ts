@@ -14,16 +14,14 @@ function addPageNumbers(message) {
   figma
     .currentPage
     .findAll(node => node.type === "TEXT")
-    .filter(node => node.characters === "{p#}")
+    .filter(node => (node as TextNode).characters === "{p#}")
     .forEach(function (node) {
       var newText = message.prefix + currentIndex + message.suffix
+      var fn = ((node as TextNode).fontName as FontName)
 
-      figma.loadFontAsync(node.fontName)
-        .then(function () {
-          node.characters = newText
-        }, function () {
-
-        })
+      figma
+      .loadFontAsync(fn)
+        .then(function () {  (node as TextNode).characters = newText},function () {})
 
       currentIndex++
     })

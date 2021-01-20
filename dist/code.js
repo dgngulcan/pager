@@ -1,0 +1,1 @@
+figma.showUI(__html__,{visible:!0,width:400,height:450}),figma.ui.onmessage=i=>{i.type,figma.closePlugin()};

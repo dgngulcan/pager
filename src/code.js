@@ -10,7 +10,6 @@ function addPageNumbers(message) {
     figma
         .currentPage
         .findAll(node => node.type === "TEXT")
-        .reverse()
         .filter(node => node.characters === "{p#}")
         .forEach(function (node) {
         var newText = message.prefix + currentIndex + message.suffix;

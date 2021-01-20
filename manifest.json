@@ -2,6 +2,6 @@
   "name": "Pager",
   "id": "914250706909410339",
   "api": "1.0.0",
-  "main": "code.ts",
-  "ui": "ui.html"
+  "main": "src/code.js",
+  "ui": "src/ui.html"
 }
