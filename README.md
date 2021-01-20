@@ -2,12 +2,12 @@
 Pager is a small Figma plugin to set page numbers to multiple frames.
 
 ### How to use
-1. Create text layer `{pageNumber}` frame(s) that you want to add page numbers to
+1. Create text layer `{p#}` frame(s) that you want to add page numbers to
 2. Make sure the text layer is where you want the page number to be
 3. Complete the configuration below and hit Run
 
 #### Limitation
-- `{pageNumber}` text layer can only have a single font
+- `{p#}` text layer can only have a single font
 
 License
 -------
