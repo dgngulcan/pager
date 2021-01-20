@@ -1,5 +1,5 @@
 ## Pager
-Pager is a small Figma plugin to set page numbers to multiple frames.
+Pager is a small [Figma plugin](https://www.figma.com/community/plugin/914250706909410339/Pager) to set page numbers to multiple frames.
 
 ### How to use
 1. Create text layer `{p#}` frame(s) that you want to add page numbers to
