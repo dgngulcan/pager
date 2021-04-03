@@ -9,13 +9,17 @@ figma.ui.onmessage = msg => {
 };
 
 function addPageNumbers(message) {
-  var currentIndex = message.startIndex
-
-  figma
+  var frames = figma
     .currentPage
     .findAll(node => node.type === "TEXT")
     .filter(node => (node as TextNode).characters === "{p#}")
-    .forEach(function (node) {
+
+    if(message.reversed){
+      frames = frames.reverse()
+    }
+
+    var currentIndex = message.startIndex
+    frames.forEach(function (node) {
       var newText = message.prefix + currentIndex + message.suffix
       var fn = ((node as TextNode).fontName as FontName)
 

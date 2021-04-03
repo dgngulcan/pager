@@ -20,8 +20,13 @@
       <td><input id="suffix" value="" placeholder="Optional"></td>
     </tr>
   </table>
-  </br></br>
 
+
+ <div>
+  <input type="checkbox" id="reversed" name="reversed" >
+  <label for="reversed">Reversed order</label>
+</div>
+</br>
   <button id="add_pages">Run</button>
   </br></br></br>
 
@@ -37,7 +42,8 @@
     const startIndex = parseInt(edtStartIndex.value, 10);
     const prefix = document.getElementById('prefix').value;
     const suffix = document.getElementById('suffix').value;
-    parent.postMessage({ pluginMessage: { type: 'add-pages', startIndex, prefix, suffix } }, '*')
+    const reversed = document.getElementById('reversed').checked;
+    parent.postMessage({ pluginMessage: { type: 'add-pages', startIndex, prefix, suffix, reversed } }, '*')
   }
 
 </script>

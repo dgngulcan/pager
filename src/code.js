@@ -6,17 +6,22 @@ figma.ui.onmessage = msg => {
     figma.closePlugin();
 };
 function addPageNumbers(message) {
-    var currentIndex = message.startIndex;
-    figma
+    var frames = figma
         .currentPage
         .findAll(node => node.type === "TEXT")
         .filter(node => node.characters === "{p#}")
-        .forEach(function (node) {
-        var newText = message.prefix + currentIndex + message.suffix;
-        figma.loadFontAsync(node.fontName)
-            .then(function () {
-            node.characters = newText;
-        }, function () {
+
+        if(message.reversed){
+            frames = frames.reverse()
+        }
+
+        var currentIndex = message.startIndex;
+        frames.forEach(function (node) {
+            var newText = message.prefix + currentIndex + message.suffix;
+            figma.loadFontAsync(node.fontName)
+              .then(function () {
+               node.characters = newText;
+         }, function () {
         });
         currentIndex++;
     });
