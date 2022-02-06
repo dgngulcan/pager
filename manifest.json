@@ -2,6 +2,7 @@
   "name": "Pager",
   "id": "914250706909410339",
   "api": "1.0.0",
-  "main": "src/code.js",
-  "ui": "src/ui.html"
+  "main": "src/code.ts",
+  "ui": "src/ui.html",
+  "editorType": ["figma"]
 }

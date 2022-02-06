@@ -4,15 +4,13 @@ figma.ui.onmessage = msg => {
   if (msg.type === 'add-pages') {
     addPageNumbers(msg)
   }
-
-  figma.closePlugin();
 };
 
-function addPageNumbers(message) {
+async function addPageNumbers(message) {
   var frames = figma
     .currentPage
     .findAll(node => node.type === "TEXT")
-    .filter(node => (node as TextNode).characters === "{p#}")
+    .filter(node => node.characters === "{p#}")
 
     if(message.reversed){
       frames = frames.reverse()
@@ -20,12 +18,11 @@ function addPageNumbers(message) {
 
     var currentIndex = message.startIndex
     frames.forEach(function (node) {
-      var newText = message.prefix + currentIndex + message.suffix
-      var fn = ((node as TextNode).fontName as FontName)
+     var newText = message.prefix + currentIndex + message.suffix
 
-      figma
-      .loadFontAsync(fn)
-        .then(function () {  (node as TextNode).characters = newText},function () {})
+    figma
+      .loadFontAsync(node.fontName)
+      .then(function () { node.characters = newText},function () {})
 
       currentIndex++
     })
